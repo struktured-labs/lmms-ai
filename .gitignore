@@ -1,0 +1,51 @@
+# Environment
+setenv.sh
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+
+# uv
+.uv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Project specific
+tmp/
+logs/
+renders/
+*.flac
+*.wav
+*.ogg
+*.mp3
+
+# Keep project files but ignore large audio
+!projects/*.mmp
+!projects/*.mmpz
