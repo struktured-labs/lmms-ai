@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "lmms-mcp": {
+      "command": "uv",
+      "args": ["--directory", "/home/struktured/projects/lmms-ai/lmms-mcp-server", "run", "lmms-mcp"],
+      "env": {
+        "LMMS_PATH": "/home/struktured/projects/lmms-ai/lmms-install/bin/lmms"
+      }
+    }
+  }
+}
