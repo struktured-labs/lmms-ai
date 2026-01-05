@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="120" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1">
+      <track name="Lead Synth" muted="0" solo="0" type="0">
+        <instrumenttrack vol="80" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127">
+          <instrument name="tripleoscillator">
+            <tripleoscillator vol0="33" vol1="33" vol2="33" pan0="0" pan1="0" pan2="0" coarse0="0" coarse1="0" coarse2="-12" finel0="0" finer0="0" finel1="-4" finer1="4" finel2="0" finer2="0" phoffset0="0" phoffset1="0" phoffset2="0" stphdetun0="0" stphdetun1="0" stphdetun2="0" wavetype0="2" wavetype1="2" wavetype2="0" modalgo1="0" modalgo2="0" useWaveTable0="1" useWaveTable1="1" useWaveTable2="1" userwavefile0="" userwavefile1="" userwavefile2=""/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127" fixedinputvelocity="-1" fixedoutputvelocity="-1" fixedoutputnote="-1"/>
+        </instrumenttrack>
+        <pattern name="Melody" type="1" muted="0" pos="0" len="768">
+          <note key="60" pos="0" len="48" vol="100" pan="0"/>
+          <note key="62" pos="48" len="48" vol="100" pan="0"/>
+          <note key="64" pos="96" len="48" vol="100" pan="0"/>
+          <note key="65" pos="144" len="48" vol="100" pan="0"/>
+          <note key="67" pos="192" len="96" vol="100" pan="0"/>
+          <note key="65" pos="288" len="48" vol="100" pan="0"/>
+          <note key="64" pos="336" len="48" vol="100" pan="0"/>
+          <note key="62" pos="384" len="96" vol="100" pan="0"/>
+          <note key="64" pos="480" len="48" vol="100" pan="0"/>
+          <note key="60" pos="528" len="48" vol="100" pan="0"/>
+          <note key="60" pos="576" len="192" vol="100" pan="0"/>
+        </pattern>
+      </track>
+      <track name="Pad" muted="0" solo="0" type="0">
+        <instrumenttrack vol="50" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127">
+          <instrument name="tripleoscillator">
+            <tripleoscillator vol0="33" vol1="33" vol2="33" pan0="0" pan1="0" pan2="0" coarse0="0" coarse1="0" coarse2="-12" finel0="0" finer0="0" finel1="-4" finer1="4" finel2="0" finer2="0" phoffset0="0" phoffset1="0" phoffset2="0" stphdetun0="0" stphdetun1="0" stphdetun2="0" wavetype0="2" wavetype1="2" wavetype2="0" modalgo1="0" modalgo2="0" useWaveTable0="1" useWaveTable1="1" useWaveTable2="1" userwavefile0="" userwavefile1="" userwavefile2=""/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127" fixedinputvelocity="-1" fixedoutputvelocity="-1" fixedoutputnote="-1"/>
+        </instrumenttrack>
+        <pattern name="Chords" type="1" muted="0" pos="0" len="768">
+          <note key="48" pos="0" len="192" vol="70" pan="0"/>
+          <note key="52" pos="0" len="192" vol="70" pan="0"/>
+          <note key="55" pos="0" len="192" vol="70" pan="0"/>
+          <note key="55" pos="192" len="192" vol="70" pan="0"/>
+          <note key="59" pos="192" len="192" vol="70" pan="0"/>
+          <note key="62" pos="192" len="192" vol="70" pan="0"/>
+          <note key="57" pos="384" len="192" vol="70" pan="0"/>
+          <note key="60" pos="384" len="192" vol="70" pan="0"/>
+          <note key="64" pos="384" len="192" vol="70" pan="0"/>
+          <note key="53" pos="576" len="192" vol="70" pan="0"/>
+          <note key="57" pos="576" len="192" vol="70" pan="0"/>
+          <note key="60" pos="576" len="192" vol="70" pan="0"/>
+        </pattern>
+      </track>
+      <track name="Bass" muted="0" solo="0" type="0">
+        <instrumenttrack vol="90" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127">
+          <instrument name="tripleoscillator">
+            <tripleoscillator vol0="33" vol1="33" vol2="33" pan0="0" pan1="0" pan2="0" coarse0="0" coarse1="0" coarse2="-12" finel0="0" finer0="0" finel1="-4" finer1="4" finel2="0" finer2="0" phoffset0="0" phoffset1="0" phoffset2="0" stphdetun0="0" stphdetun1="0" stphdetun2="0" wavetype0="2" wavetype1="2" wavetype2="0" modalgo1="0" modalgo2="0" useWaveTable0="1" useWaveTable1="1" useWaveTable2="1" userwavefile0="" userwavefile1="" userwavefile2=""/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127" fixedinputvelocity="-1" fixedoutputvelocity="-1" fixedoutputnote="-1"/>
+        </instrumenttrack>
+        <pattern name="Bass" type="1" muted="0" pos="0" len="768">
+          <note key="48" pos="0" len="72" vol="100" pan="0"/>
+          <note key="48" pos="96" len="72" vol="90" pan="0"/>
+          <note key="55" pos="192" len="72" vol="100" pan="0"/>
+          <note key="55" pos="288" len="72" vol="90" pan="0"/>
+          <note key="57" pos="384" len="72" vol="100" pan="0"/>
+          <note key="57" pos="480" len="72" vol="90" pan="0"/>
+          <note key="53" pos="576" len="72" vol="100" pan="0"/>
+          <note key="53" pos="672" len="72" vol="90" pan="0"/>
+        </pattern>
+      </track>
+    </trackcontainer>
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+    <ControllerRackView width="350" height="200"/>
+    <pianoroll width="600" height="480"/>
+    <automationeditor width="600" height="400"/>
+    <projectnotes/>
+  </song>
+</lmms-project>

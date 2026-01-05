@@ -41,6 +41,8 @@ venv/
 tmp/
 logs/
 renders/
+lmms-install/
+lmms/build/
 *.flac
 *.wav
 *.ogg

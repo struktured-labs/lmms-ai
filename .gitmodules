@@ -1,6 +1,6 @@
-[submodule "lmms"]
-	path = lmms
-	url = https://github.com/LMMS/lmms.git
 [submodule "lmms-mcp-server"]
 	path = lmms-mcp-server
 	url = git@github.com:struktured-labs/lmms-mcp-server.git
+[submodule "lmms"]
+	path = lmms
+	url = git@github.com:struktured-labs/lmms.git
