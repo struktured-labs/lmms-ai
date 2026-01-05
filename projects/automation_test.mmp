@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="120" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1">
+      <track name="Synth" muted="0" solo="0" type="0">
+        <instrumenttrack vol="100" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127">
+          <instrument name="tripleoscillator">
+            <tripleoscillator vol0="33" vol1="33" vol2="33" pan0="0" pan1="0" pan2="0" coarse0="0" coarse1="0" coarse2="-12" finel0="0" finer0="0" finel1="-4" finer1="4" finel2="0" finer2="0" phoffset0="0" phoffset1="0" phoffset2="0" stphdetun0="0" stphdetun1="0" stphdetun2="0" wavetype0="2" wavetype1="2" wavetype2="0" modalgo1="0" modalgo2="0" useWaveTable0="1" useWaveTable1="1" useWaveTable2="1" userwavefile0="" userwavefile1="" userwavefile2=""/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127" fixedinputvelocity="-1" fixedoutputvelocity="-1" fixedoutputnote="-1"/>
+        </instrumenttrack>
+        <pattern name="Notes" type="1" muted="0" pos="0" len="768">
+          <note key="60" pos="0" len="192" vol="100" pan="0"/>
+          <note key="64" pos="192" len="192" vol="100" pan="0"/>
+          <note key="67" pos="384" len="192" vol="100" pan="0"/>
+        </pattern>
+      </track>
+      <track name="Volume Automation" muted="0" solo="0" type="6">
+        <automationtrack/>
+        <automationpattern name="Volume Ramp" pos="0" len="768" prog="1" tens="1.0" mute="0">
+          <time pos="0" value="20.0" inTan="0.0" outTan="0.0"/>
+          <time pos="384" value="100.0" inTan="0.0" outTan="0.0"/>
+          <time pos="576" value="100.0" inTan="0.0" outTan="0.0"/>
+          <time pos="768" value="0.0" inTan="0.0" outTan="0.0"/>
+        </automationpattern>
+        <automationpattern name="Filter Sweep" pos="0" len="768" prog="2" tens="1.0" mute="0">
+          <time pos="0" value="50.0" inTan="0.0" outTan="0.0"/>
+          <time pos="48" value="78.2842712474619" inTan="0.0" outTan="0.0"/>
+          <time pos="96" value="90.0" inTan="0.0" outTan="0.0"/>
+          <time pos="144" value="78.2842712474619" inTan="0.0" outTan="0.0"/>
+          <time pos="192" value="50.00000000000001" inTan="0.0" outTan="0.0"/>
+          <time pos="240" value="21.7157287525381" inTan="0.0" outTan="0.0"/>
+          <time pos="288" value="10.0" inTan="0.0" outTan="0.0"/>
+          <time pos="336" value="21.71572875253809" inTan="0.0" outTan="0.0"/>
+          <time pos="384" value="49.99999999999999" inTan="0.0" outTan="0.0"/>
+          <time pos="432" value="78.2842712474619" inTan="0.0" outTan="0.0"/>
+          <time pos="480" value="90.0" inTan="0.0" outTan="0.0"/>
+          <time pos="528" value="78.28427124746193" inTan="0.0" outTan="0.0"/>
+          <time pos="576" value="50.000000000000014" inTan="0.0" outTan="0.0"/>
+          <time pos="624" value="21.715728752538084" inTan="0.0" outTan="0.0"/>
+          <time pos="672" value="10.0" inTan="0.0" outTan="0.0"/>
+          <time pos="720" value="21.715728752538062" inTan="0.0" outTan="0.0"/>
+          <time pos="768" value="49.99999999999998" inTan="0.0" outTan="0.0"/>
+        </automationpattern>
+      </track>
+    </trackcontainer>
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+    <ControllerRackView width="350" height="200"/>
+    <pianoroll width="600" height="480"/>
+    <automationeditor width="600" height="400"/>
+    <projectnotes/>
+  </song>
+</lmms-project>
