@@ -1,0 +1,9 @@
+# Ignore rendered audio
+*.flac
+*.wav
+*.mp3
+*.ogg
+
+# Keep project files
+!*.mmp
+!*.mmpz

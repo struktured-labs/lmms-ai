@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="140" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1">
+      <track name="BB" muted="0" solo="0" type="1">
+        <bbtrack/>
+        <bbtco pos="0" len="768" muted="0" name=""/>
+        <bbtco pos="768" len="768" muted="0" name=""/>
+        <bbtco pos="1536" len="768" muted="0" name=""/>
+        <bbtco pos="2304" len="768" muted="0" name=""/>
+      </track>
+    </trackcontainer>
+
+    <!-- Pattern Editor with SF2 808 drums -->
+    <trackcontainer type="bbtrackcontainer" width="600" x="0" y="300" maximized="0" visible="1">
+      <!-- Kick - SF2 808 at MIDI 36 -->
+      <track name="808 Kick" muted="0" solo="0" type="0">
+        <instrumenttrack vol="100" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="36" usemasterpitch="0" firstkey="0" lastkey="127">
+          <instrument name="sf2player">
+            <sf2player src="/home/struktured/projects/lmms-ai/assets/soundfonts/HS TR-808 Drums.sf2" bank="0" patch="0" gain="1.5"
+                       reverbOn="0" chorusOn="0"/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127"/>
+        </instrumenttrack>
+        <pattern name="" type="0" pos="0" steps="16">
+          <note key="36" pos="0" len="48" vol="127" pan="0"/>
+          <note key="36" pos="384" len="48" vol="127" pan="0"/>
+        </pattern>
+      </track>
+
+      <!-- Snare - SF2 808 at MIDI 38 -->
+      <track name="808 Snare" muted="0" solo="0" type="0">
+        <instrumenttrack vol="100" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="38" usemasterpitch="0" firstkey="0" lastkey="127">
+          <instrument name="sf2player">
+            <sf2player src="/home/struktured/projects/lmms-ai/assets/soundfonts/HS TR-808 Drums.sf2" bank="0" patch="0" gain="1.2"
+                       reverbOn="0" chorusOn="0"/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127"/>
+        </instrumenttrack>
+        <pattern name="" type="0" pos="0" steps="16">
+          <note key="38" pos="192" len="48" vol="120" pan="0"/>
+          <note key="38" pos="576" len="48" vol="120" pan="0"/>
+        </pattern>
+      </track>
+
+      <!-- Hi-Hat - SF2 808 at MIDI 42 -->
+      <track name="808 HiHat" muted="0" solo="0" type="0">
+        <instrumenttrack vol="80" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="42" usemasterpitch="0" firstkey="0" lastkey="127">
+          <instrument name="sf2player">
+            <sf2player src="/home/struktured/projects/lmms-ai/assets/soundfonts/HS TR-808 Drums.sf2" bank="0" patch="0" gain="1.0"
+                       reverbOn="0" chorusOn="0"/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127"/>
+        </instrumenttrack>
+        <pattern name="" type="0" pos="0" steps="16">
+          <note key="42" pos="0" len="24" vol="80" pan="0"/>
+          <note key="42" pos="96" len="24" vol="60" pan="0"/>
+          <note key="42" pos="192" len="24" vol="80" pan="0"/>
+          <note key="42" pos="288" len="24" vol="60" pan="0"/>
+          <note key="42" pos="384" len="24" vol="80" pan="0"/>
+          <note key="42" pos="480" len="24" vol="60" pan="0"/>
+          <note key="42" pos="576" len="24" vol="80" pan="0"/>
+          <note key="42" pos="672" len="24" vol="60" pan="0"/>
+        </pattern>
+      </track>
+    </trackcontainer>
+
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+  </song>
+</lmms-project>

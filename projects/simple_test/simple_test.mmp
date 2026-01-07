@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="140" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1">
+      <track name="Test" muted="0" solo="0" type="0">
+        <instrumenttrack vol="100" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127">
+          <instrument name="kicker">
+            <kicker startfreq="200" endfreq="40" decay="200" dist="20" gain="1.0" env="1" noise="0" click="0.3" slope="0.8"/>
+          </instrument>
+          <eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127"/>
+        </instrumenttrack>
+        <pattern name="Kicks" type="1" muted="0" pos="0" len="768">
+          <note key="57" pos="0" len="48" vol="127" pan="0"/>
+          <note key="57" pos="192" len="48" vol="127" pan="0"/>
+          <note key="57" pos="384" len="48" vol="127" pan="0"/>
+          <note key="57" pos="576" len="48" vol="127" pan="0"/>
+        </pattern>
+      </track>
+    </trackcontainer>
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+  </song>
+</lmms-project>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="140" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1"><track name="Bass" muted="0" solo="0" type="0"><instrumenttrack vol="100" pan="0" pitch="0" pitchrange="24" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127"><instrument name="tripleoscillator"><tripleoscillator vol0="100.0" pan0="0.0" coarse0="0" finel0="0.0" finer0="0.0" phoffset0="0.0" stphdetun0="0.0" wavetype0="2" userwavefile0="" vol1="100.0" pan1="0.0" coarse1="-12" finel1="0.0" finer1="0.0" phoffset1="0.0" stphdetun1="0.0" wavetype1="2" userwavefile1="" vol2="50.0" pan2="0.0" coarse2="0" finel2="0.0" finer2="0.0" phoffset2="0.0" stphdetun2="0.0" wavetype2="2" userwavefile2="" modalgo1="0" modalgo2="0" modalgo3="2" useWaveTable0="1" useWaveTable1="1" useWaveTable2="1"/></instrument><eldata ftype="0" fcut="14000.0" fres="0.5" fwet="0.0"><elvol pdel="0.0" att="0.0" hold="0.5" dec="0.5" sus="0.5" rel="0.1" amt="0.0" lspd="0.1" lamt="0.0" lshp="0" x100="0" syncmode="0" ctlenvamt="0"/><elcut pdel="0.0" att="0.0" hold="0.5" dec="0.5" sus="0.5" rel="0.1" amt="0.0" lspd="0.1" lamt="0.0" lshp="0" x100="0" syncmode="0" ctlenvamt="0"/><elres pdel="0.0" att="0.0" hold="0.5" dec="0.5" sus="0.5" rel="0.1" amt="0.0" lspd="0.1" lamt="0.0" lshp="0" x100="0" syncmode="0" ctlenvamt="0"/></eldata><fxchain enabled="0" numofeffects="0"/><midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127" fixedinputvelocity="-1" fixedoutputvelocity="-1" fixedoutputnote="-1"/></instrumenttrack><pattern name="Bass Note" type="1" muted="0" pos="0" len="1536"><note key="31" pos="0" len="1536" vol="100" pan="0"/></pattern></track><track name="Pitch Automation" muted="0" solo="0" type="5"><automationtrack/><automationpattern name="Pitch Drop" pos="0" len="1536" prog="1" tens="1.0" mute="0"><time pos="0" value="0.0" inTan="0.0" outTan="0.0" outValue="0.0"/><time pos="1536" value="-1200.0" inTan="0.0" outTan="0.0" outValue="-1200.0"/><object trackref="0" param="pitch"/></automationpattern></track></trackcontainer>
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+    <ControllerRackView width="350" height="200"/>
+    <pianoroll width="600" height="480"/>
+    <automationeditor width="600" height="400"/>
+    <projectnotes/>
+  </song>
+</lmms-project>

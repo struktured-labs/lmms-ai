@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="140" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1"><track name="Kick Test" muted="0" solo="0" type="2"><sampletrack vol="100" pan="0" src="/home/struktured/projects/lmms-ai/lmms/data/samples/drums/kick_hard01.ogg"/></track><track name="Kick Instrument" muted="0" solo="0" type="0"><instrumenttrack vol="100" pan="0" pitch="0" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127"><instrument name="audiofileprocessor"><audiofileprocessor src="/home/struktured/projects/lmms-ai/lmms/data/samples/drums/kick_hard01.ogg" amp="100" sframe="0" lframe="0" eframe="1" looped="0" reversed="0" interp="1" stutter="0"/></instrument><eldata ftype="0" fcut="14000" fres="0.5" fwet="0"/><fxchain enabled="0" numofeffects="0"/><midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127" fixedinputvelocity="-1" fixedoutputvelocity="-1" fixedoutputnote="-1"/></instrumenttrack><pattern name="Kick Pattern" type="1" muted="0" pos="0" len="768"><note key="57" pos="0" len="24" vol="127" pan="0"/><note key="57" pos="96" len="24" vol="127" pan="0"/></pattern></track></trackcontainer>
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+    <ControllerRackView width="350" height="200"/>
+    <pianoroll width="600" height="480"/>
+    <automationeditor width="600" height="400"/>
+    <projectnotes/>
+  </song>
+</lmms-project>

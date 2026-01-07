@@ -51,3 +51,9 @@ lmms/build/
 # Keep project files but ignore large audio
 !projects/*.mmp
 !projects/*.mmpz
+
+# Soundfonts (large binary files - use download script)
+assets/soundfonts/*.sf2
+assets/soundfonts/*.sf3
+!assets/soundfonts/README.md
+!assets/soundfonts/download.sh

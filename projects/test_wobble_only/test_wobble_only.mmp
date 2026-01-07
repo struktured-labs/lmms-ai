@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lmms-project version="1.0" creator="LMMS" creatorversion="1.2.2" type="song">
+  <head bpm="140" timesig_numerator="4" timesig_denominator="4" mastervol="100" masterpitch="0"/>
+  <song>
+    <trackcontainer type="song" width="600" x="0" y="0" maximized="0" visible="1">
+      <track name="Voice Wobble" muted="0" solo="0" type="0">
+        <instrumenttrack vol="80" pan="0" pitch="-12" pitchrange="1" fxch="0" basenote="57" usemasterpitch="1" firstkey="0" lastkey="127">
+          <instrument name="tripleoscillator">
+            <tripleoscillator vol0="100" pan0="0" coarse0="0" finel0="0" finer0="0" stphdetun0="0" wavetype0="2" vol1="80" pan1="0" coarse1="-12" finel1="0" finer1="0" stphdetun1="0" wavetype1="0" vol2="0" pan2="0" coarse2="0" finel2="0" finer2="0" stphdetun2="0" wavetype2="0" modalgo1="2" modalgo2="2"/>
+          </instrument>
+          <eldata ftype="0" fcut="200" fres="0.8" fwet="1.0">
+            <elcut pdel="0" att="0" hold="0.5" dec="0.5" sus="0.5" rel="0.1" amt="0" lspd="2.0" lamt="100" lshp="0" x100="1" syncmode="0" ctlenvamt="0"/>
+          </eldata>
+          <fxchain enabled="0" numofeffects="0"/>
+          <midiport readable="0" writable="0" inputchannel="0" outputchannel="1" basevelocity="127"/>
+        </instrumenttrack>
+        <pattern name="Wobble" type="1" muted="0" pos="0" len="768">
+          <note key="31" pos="0" len="192" vol="127" pan="0"/>
+          <note key="33" pos="192" len="96" vol="127" pan="0"/>
+          <note key="31" pos="288" len="192" vol="127" pan="0"/>
+          <note key="36" pos="480" len="192" vol="127" pan="0"/>
+        </pattern>
+      </track>
+    </trackcontainer>
+    <fxmixer width="600" height="200">
+      <mixerchannel num="0" name="Master" volume="1" muted="0"/>
+    </fxmixer>
+  </song>
+</lmms-project>
