@@ -4,3 +4,6 @@
 [submodule "lmms"]
 	path = lmms
 	url = git@github.com:struktured-labs/lmms.git
+[submodule "soundcloud-mcp-server"]
+	path = soundcloud-mcp-server
+	url = git@github.com:struktured-labs/soundcloud-mcp.git
