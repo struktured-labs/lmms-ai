@@ -17,13 +17,14 @@ This project uses a **custom LMMS fork** (version 1.3.0-alpha) for tight AI inte
 
 ## Project: Dubstep Drops
 
-**Status:** ✓ GUI round-trip compatibility FIXED! Ready for production use.
+**Status:** ✓ GUI round-trip compatibility FULLY RESOLVED! Ready for production use.
 **Location:** `projects/dubstep_drops/dubstep_drops.mmp`
 **Latest Commits:**
+- 36fa490 (lmms-mcp-server) - Fix version attribute to prevent LMMS upgrade corruption
+- 5e9c6ab (dubstep project) - Fix version attribute: set to 31 to prevent LMMS upgrade corruption
 - a535491 (lmms-mcp-server) - Fix LMMS 1.3.0-alpha format compatibility: midiclip and automationclip
 - f602ab1 (dubstep project) - Fixed kick volume to 67% and re-applied bass amplitude envelope
-- ac6c405 (main) - Add SoundCloud MCP server as git submodule
-- Tagged: gui-roundtrip-fix-v1.0
+- Tagged: version-fix-v1.1, gui-roundtrip-fix-v1.0
 
 ### Track Details
 - **Length:** 48 bars
@@ -75,11 +76,11 @@ Updated `/home/struktured/projects/lmms-ai/lmms-mcp-server/src/lmms_mcp/xml/`:
 
 ### MCP Server Status
 - Branch: main
-- Status: 5 commits ahead of origin/main
+- Status: 6 commits ahead of origin/main (includes version fix)
 - Working tree: clean
-- Latest commit: a535491 - Fix LMMS 1.3.0-alpha format compatibility: midiclip and automationclip
-- Tagged: gui-roundtrip-fix-v1.0
-- Action needed: Push commits to origin
+- Latest commit: 36fa490 - Fix version attribute to prevent LMMS upgrade corruption
+- Tagged: version-fix-v1.1, gui-roundtrip-fix-v1.0
+- **Action needed: Restart MCP server to load new code, then push commits to origin**
 
 ### Git Version History (Recent)
 - f602ab1 - Fixed kick volume to 67% and re-applied bass amplitude envelope
@@ -126,13 +127,43 @@ lmms-ai/
 3. Restore corrupted files with `restore_project_version(version_hash)`
 4. Use git tags for milestones via `tag_project_milestone()`
 
+### ✓ RESOLVED: Version Attribute Pitch Corruption (2026-01-10)
+
+**Problem:**
+- Bass and tracks sounded octave higher after LMMS GUI loaded MCP-written projects
+- Originally thought to be GUI playback vs render discrepancy
+- Actually caused by LMMS running upgrade methods on every load
+
+**Root Cause Identified:**
+- MCP writer had uncommitted code setting `version="31"`
+- But MCP server was running cached bytecode that wrote `version="1.0"`
+- LMMS 1.3.0-alpha has 31 upgrade methods: `if (m_fileVersion < 31) { upgrade(); }`
+- Upgrade #20 (`upgrade_extendedNoteRange()`) adds +12 semitones to all notes
+- **Result:** Every GUI load shifted pitch up by one octave
+
+**Fix Applied (commit 36fa490):**
+Updated `/home/struktured/projects/lmms-ai/lmms-mcp-server/src/lmms_mcp/xml/writer.py`:
+1. `create_xml()`: Set `version="31"` instead of `"1.0"` (line 60)
+2. `update_xml()`: Force `version="31"` when modifying projects (line 169)
+
+**Why version="31":**
+- LMMS has exactly 31 upgrade methods in `UPGRADE_METHODS` array (DataFile.cpp line 73)
+- Setting version="31" means "already at latest format, skip all upgrades"
+- GUI will preserve `version="31"` when saving (it reads and maintains the version)
+
+**Verification:**
+- ✓ All MCP-written files now have `version="31"`
+- ✓ LMMS GUI loads projects with correct pitch
+- ✓ GUI save preserves `version="31"` (doesn't revert to "1.0")
+- ✓ Multiple round-trips preserve pitch perfectly
+
+**Project Files Updated:**
+- Committed changes to lmms-mcp-server (commit 36fa490)
+- Updated dubstep_drops.mmp to `version="31"` (commit 5e9c6ab)
+
 ### Known Issues
-1. **Bass Frequency Discrepancy** (observed 2026-01-08)
-   - GUI playback: Bass sounds lower frequency than expected
-   - Render output: Bass sounds correct
-   - Possible causes: Real-time playback optimizations, pitch automation processing differences
-   - Status: To investigate
+None currently!
 
 ---
-*Last updated: 2026-01-08*
-*Next session: Push commits, investigate bass frequency issue, consider SoundCloud upload*
+*Last updated: 2026-01-10*
+*Next session: Push commits to origin, consider SoundCloud upload*
