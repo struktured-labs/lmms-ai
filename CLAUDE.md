@@ -126,6 +126,16 @@ lmms-ai/
 2. Always commit versions before major changes using `save_project_version()`
 3. Restore corrupted files with `restore_project_version(version_hash)`
 4. Use git tags for milestones via `tag_project_milestone()`
+5. **CRITICAL: MANDATORY INSTRUMENT VERIFICATION WORKFLOW**
+   - **NEVER play an instrument to the user without spectrum analysis first**
+   - **NEVER assume GM patch numbers or MIDI note mappings are correct**
+   - **Required workflow for ANY instrument selection:**
+     1. Extract instrument sample to isolated audio file
+     2. Perform spectrum analysis (FFT, frequency content, spectral characteristics)
+     3. Verify spectral signature matches expected instrument type
+     4. ONLY THEN present to user for final verification
+   - **SF2 soundfonts may have completely non-standard mappings**
+   - **This is not optional - spectrum verification is REQUIRED before user interaction**
 
 ### ✓ RESOLVED: Version Attribute Pitch Corruption (2026-01-10)
 
@@ -161,9 +171,30 @@ Updated `/home/struktured/projects/lmms-ai/lmms-mcp-server/src/lmms_mcp/xml/writ
 - Committed changes to lmms-mcp-server (commit 36fa490)
 - Updated dubstep_drops.mmp to `version="31"` (commit 5e9c6ab)
 
+### New MCP Tools (2026-01-17)
+
+**Spectrum Analysis & Instrument Verification:**
+1. `analyze_spectrum(audio_path)` - FFT analysis, frequency band distribution, instrument classification
+   - Returns spectral centroid, rolloff, zero-crossing rate
+   - Identifies cymbal-like, bass-heavy, noisy, or tonal characteristics
+   - Provides human-readable interpretation of spectral signature
+
+2. `extract_sf2_note(sf2_path, output_path, bank, patch, note, duration)` - Extract single note from soundfont
+   - Creates minimal LMMS project with one note
+   - Renders to audio file for spectrum analysis
+   - Use BEFORE adding instruments to main project
+
+**Required Workflow for Instrument Selection:**
+```
+1. extract_sf2_note() → cymbal_test.wav
+2. analyze_spectrum() → verify it's actually a cymbal
+3. If correct: add to main project
+4. If wrong: try different note/patch
+```
+
 ### Known Issues
 None currently!
 
 ---
-*Last updated: 2026-01-10*
-*Next session: Push commits to origin, consider SoundCloud upload*
+*Last updated: 2026-01-17*
+*Next session: Restart MCP server, use new spectrum tools to find proper cymbal*
