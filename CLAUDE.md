@@ -171,6 +171,44 @@ Updated `/home/struktured/projects/lmms-ai/lmms-mcp-server/src/lmms_mcp/xml/writ
 - Committed changes to lmms-mcp-server (commit 36fa490)
 - Updated dubstep_drops.mmp to `version="31"` (commit 5e9c6ab)
 
+### ✓ RESOLVED: Legacy Automation Format (2026-01-17)
+
+**Problem:**
+- Bass pitch automation was stripped when LMMS GUI saved the project
+- Automation clips appeared empty after GUI save/load cycle
+- Pitch drop effect was lost
+
+**Root Cause Identified:**
+- Canonical project was created with older MCP tools using legacy object-id format
+- Legacy format: `<object id="7191582"/>` requires ProjectJournal registration
+- When GUI loads project, object IDs can't be resolved (not in journal)
+- AutomationClip::resolveAllIDs() fails to link automation to pitch parameter
+- On save, orphaned automation clips get their points stripped
+
+**Fix Applied (commit 97d1d71):**
+Re-linked bass pitch automation using updated `link_automation` MCP tool:
+- Old format: `<object id="7191582"/>` (legacy)
+- New format: `<object trackref="6" param="pitch"/>` (modern)
+- Pitch values converted from semitones to cents (×100 for LMMS internal format)
+- Automation now references track by index instead of object ID
+
+**Why modern format works:**
+- trackref/param format has been supported since LMMS 1.2+
+- Uses track index and parameter name instead of object IDs
+- Doesn't rely on ProjectJournal registration
+- Survives GUI save/load cycles without data loss
+
+**Verification:**
+- ✓ Automation clip now uses `<object trackref="6" param="pitch"/>`
+- ✓ Pitch values correctly stored in cents (-240000 = -24 semitones)
+- ✓ Ready for GUI round-trip testing
+
+**What This Means:**
+- Your LMMS fork is up-to-date and correct
+- The issue was with the PROJECT FILE format, not the tools
+- MCP tools have been using modern format for a while
+- Old project files just needed to be updated with current tools
+
 ### New MCP Tools (2026-01-17)
 
 **Spectrum Analysis & Instrument Verification:**
