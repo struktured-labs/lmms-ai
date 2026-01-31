@@ -123,7 +123,11 @@ lmms-ai/
 
 ### Workflow Notes
 1. ✓ **GUI save is now safe!** MCP tools and LMMS GUI can be used interchangeably
-2. Always commit versions before major changes using `save_project_version()`
+2. **CRITICAL: CHECKPOINT AFTER EVERY EDIT**
+   - After ANY MCP tool modifies a project file, immediately call `save_project_version()` to commit
+   - After ANY GUI save, immediately call `save_project_version()` to commit
+   - This ensures we can always restore to a known-good state if something breaks
+   - No exceptions - every edit gets a checkpoint
 3. Restore corrupted files with `restore_project_version(version_hash)`
 4. Use git tags for milestones via `tag_project_milestone()`
 5. **CRITICAL: MANDATORY INSTRUMENT VERIFICATION WORKFLOW**
@@ -230,9 +234,51 @@ Re-linked bass pitch automation using updated `link_automation` MCP tool:
 4. If wrong: try different note/patch
 ```
 
+### ✓ RESOLVED: Destructive XML Rewrite (2026-01-30)
+
+**Problem:**
+- Every `set_automation_points` call broke automation linking
+- Automation clips showed only 1 point in GUI after MCP edit
+- Effects chains, MIDI controllers, and dozens of attributes silently destroyed
+
+**Root Cause Identified:**
+- `update_xml()` in writer.py was removing ALL track elements and rebuilding them from the model
+- The model is **lossy** - it doesn't capture: `<midicontrollers>`, `<fxchain>`, `mutedBeforeSolo`, `enablecc`, `keymap`, `scale`, duplicate `<object>` links, and many more attributes/elements
+- Result: editing one automation clip destroyed data across the entire project
+
+**Fix Applied (commit 170747a):**
+- New `surgical_update_automation_points()` function in writer.py
+- Parses raw XML directly, finds the specific clip, replaces ONLY `<time>` elements
+- Preserves `<object>` linking elements and everything else byte-for-byte
+- `set_automation_points` now uses this instead of the lossy parse/write pipeline
+
+**Verification:**
+- Full XML diff confirms ONLY the 4 pitch values changed (-2400 → -1800)
+- Zero other differences across the entire project file
+- GUI loads with automation linking intact and all effects preserved
+
+### CRITICAL: MCP XML Editing Design Rules
+
+**NEVER use the parse→model→write pipeline to edit existing projects.**
+
+The `update_xml()` function rebuilds all tracks from a lossy model that doesn't capture
+the full LMMS XML schema. This silently destroys data including effects, MIDI controllers,
+automation linking, and dozens of attributes.
+
+**ALWAYS use surgical XML editing for modifications:**
+1. Parse raw XML with `etree.fromstring()` (NOT through the model)
+2. Navigate to the specific element being modified
+3. Change ONLY the target attributes/children
+4. Write raw XML back without touching anything else
+
+**When adding NEW MCP tools that modify existing projects:**
+- Follow the `surgical_update_automation_points()` pattern
+- Read the raw XML, find the element, modify only what's needed, write back
+- NEVER call `write_project()` / `update_xml()` for edits to existing data
+- The full write pipeline is ONLY safe for creating brand-new projects from scratch
+
 ### Known Issues
 None currently!
 
 ---
-*Last updated: 2026-01-17*
-*Next session: Restart MCP server, use new spectrum tools to find proper cymbal*
+*Last updated: 2026-01-30*
