@@ -2010,8 +2010,8 @@
         <automationtrack/>
       </track>
       <track type="0" muted="0" solo="0" name="Transition Sweep" mutedBeforeSolo="0">
-        <instrumenttrack keymap="0" basenote="57" pan="0" mixch="0" lastkey="127" enabled="0" pitchrange="24" firstkey="0" enablecc="0" usemasterpitch="1" scale="0" range_import="1">
-          <vol value="20" scale_type="linear" id="4344569"/>
+        <instrumenttrack keymap="0" basenote="57" pan="0" mixch="0" lastkey="127" enabled="1" pitchrange="24" firstkey="0" enablecc="0" usemasterpitch="1" scale="0" range_import="1">
+          <vol value="40" scale_type="linear" id="4344569"/>
           <pitch value="1000" scale_type="linear" id="83499"/>
           <midicontrollers cc36="0" cc89="0" cc91="0" cc125="0" cc25="0" cc122="0" cc41="0" cc101="0" cc126="0" cc49="0" cc13="0" cc28="0" cc19="0" cc1="0" cc106="0" cc107="0" cc54="0" cc34="0" cc112="0" cc53="0" cc108="0" cc43="0" cc38="0" cc119="0" cc50="0" cc22="0" cc72="0" cc23="0" cc69="0" cc26="0" cc100="0" cc48="0" cc56="0" cc4="0" cc88="0" cc75="0" cc116="0" cc7="0" cc47="0" cc66="0" cc99="0" cc15="0" cc57="0" cc37="0" cc114="0" cc21="0" cc71="0" cc98="0" cc105="0" cc110="0" cc111="0" cc68="0" cc93="0" cc109="0" cc58="0" cc60="0" cc32="0" cc95="0" cc8="0" cc39="0" cc24="0" cc42="0" cc46="0" cc94="0" cc127="0" cc5="0" cc123="0" cc84="0" cc124="0" cc96="0" cc2="0" cc90="0" cc29="0" cc80="0" cc59="0" cc104="0" cc77="0" cc30="0" cc65="0" cc12="0" cc55="0" cc117="0" cc40="0" cc118="0" cc121="0" cc63="0" cc14="0" cc0="0" cc33="0" cc97="0" cc10="0" cc61="0" cc62="0" cc52="0" cc51="0" cc92="0" cc85="0" cc6="0" cc81="0" cc45="0" cc120="0" cc20="0" cc31="0" cc67="0" cc73="0" cc74="0" cc82="0" cc35="0" cc83="0" cc70="0" cc27="0" cc115="0" cc78="0" cc9="0" cc64="0" cc79="0" cc17="0" cc11="0" cc76="0" cc3="0" cc18="0" cc44="0" cc102="0" cc16="0" cc86="0" cc113="0" cc87="0" cc103="0"/>
           <instrument name="tripleoscillator">
@@ -2054,6 +2054,18 @@
       <midiclip type="1" pos="12672" off="0" muted="0" len="1920" name="Sweep Down (Up)" steps="16" autoresize="1">
           <note type="0" pan="0" pos="0" key="41" len="1920" vol="110"/>
         </midiclip>
+        <midiclip type="1" pos="40704" off="0" muted="0" len="1536" name="Riser Build 2" steps="16" autoresize="1">
+          <note type="0" pan="0" pos="0" key="43" len="1536" vol="100"/>
+        </midiclip>
+        <midiclip type="1" pos="46848" off="0" muted="0" len="2304" name="BIG Riser Drop 2" steps="16" autoresize="1">
+          <note type="0" pan="0" pos="0" key="41" len="2304" vol="120"/>
+        </midiclip>
+        <midiclip type="1" pos="53760" off="0" muted="0" len="1536" name="Downlifter Breakdown" steps="16" autoresize="1">
+          <note type="0" pan="0" pos="0" key="41" len="1536" vol="110"/>
+        </midiclip>
+        <midiclip type="1" pos="59904" off="0" muted="0" len="1536" name="Fade Outro" steps="16" autoresize="1">
+          <note type="0" pan="0" pos="0" key="43" len="1536" vol="80"/>
+        </midiclip>
       </track>
       <track type="5" muted="0" solo="0" name="Sweep Pitch" mutedBeforeSolo="0">
         <automationtrack/>
@@ -2077,6 +2089,26 @@
           <time inTan="0" value="5000" pos="1536" outTan="0" outValue="5000" lockedTan="0"/>
           <object id="83499"/>
         </automationclip>
+        <automationclip pos="40704" prog="1" off="0" tens="1" len="1536" mute="0" name="Pitch Riser Build2" autoresize="1">
+          <time inTan="0" value="0" pos="0" outTan="0" outValue="0" lockedTan="0"/>
+          <time inTan="0" value="5000" pos="1536" outTan="0" outValue="5000" lockedTan="0"/>
+          <object id="83499"/>
+        </automationclip>
+        <automationclip pos="46848" prog="1" off="0" tens="1" len="2304" mute="0" name="Pitch BIG Riser" autoresize="1">
+          <time inTan="0" value="0" pos="0" outTan="0" outValue="0" lockedTan="0"/>
+          <time inTan="0" value="5000" pos="2304" outTan="0" outValue="5000" lockedTan="0"/>
+          <object id="83499"/>
+        </automationclip>
+        <automationclip pos="53760" prog="1" off="0" tens="1" len="1536" mute="0" name="Pitch Downlifter" autoresize="1">
+          <time inTan="0" value="5000" pos="0" outTan="0" outValue="5000" lockedTan="0"/>
+          <time inTan="0" value="0" pos="1536" outTan="0" outValue="0" lockedTan="0"/>
+          <object id="83499"/>
+        </automationclip>
+        <automationclip pos="59904" prog="1" off="0" tens="1" len="1536" mute="0" name="Pitch Fade Outro" autoresize="1">
+          <time inTan="0" value="3000" pos="0" outTan="0" outValue="3000" lockedTan="0"/>
+          <time inTan="0" value="0" pos="1536" outTan="0" outValue="0" lockedTan="0"/>
+          <object id="83499"/>
+        </automationclip>
       </track>
       <track type="5" muted="0" solo="0" name="Sweep Filter" mutedBeforeSolo="0">
         <automationtrack/>
@@ -2095,6 +2127,22 @@
       <automationclip pos="12672" prog="1" off="0" tens="1" len="1536" mute="0" name="Filter Open" autoresize="1">
           <time inTan="0" value="5" pos="0" outTan="0" outValue="5" lockedTan="0"/>
           <time inTan="0" value="100" pos="1536" outTan="0" outValue="100" lockedTan="0"/>
+        </automationclip>
+        <automationclip pos="40704" prog="1" off="0" tens="1" len="1536" mute="0" name="Filter Riser Build2" autoresize="1">
+          <time inTan="0" value="5" pos="0" outTan="0" outValue="5" lockedTan="0"/>
+          <time inTan="0" value="100" pos="1536" outTan="0" outValue="100" lockedTan="0"/>
+        </automationclip>
+        <automationclip pos="46848" prog="1" off="0" tens="1" len="2304" mute="0" name="Filter BIG Riser" autoresize="1">
+          <time inTan="0" value="5" pos="0" outTan="0" outValue="5" lockedTan="0"/>
+          <time inTan="0" value="100" pos="2304" outTan="0" outValue="100" lockedTan="0"/>
+        </automationclip>
+        <automationclip pos="53760" prog="1" off="0" tens="1" len="1536" mute="0" name="Filter Downlifter" autoresize="1">
+          <time inTan="0" value="100" pos="0" outTan="0" outValue="100" lockedTan="0"/>
+          <time inTan="0" value="5" pos="1536" outTan="0" outValue="5" lockedTan="0"/>
+        </automationclip>
+        <automationclip pos="59904" prog="1" off="0" tens="1" len="1536" mute="0" name="Filter Fade Outro" autoresize="1">
+          <time inTan="0" value="60" pos="0" outTan="0" outValue="60" lockedTan="0"/>
+          <time inTan="0" value="5" pos="1536" outTan="0" outValue="5" lockedTan="0"/>
         </automationclip>
       </track>
       <track type="5" muted="0" solo="0" name="Sweep Volume" mutedBeforeSolo="0">
@@ -2117,6 +2165,26 @@
       <automationclip pos="12672" prog="1" off="0" tens="1" len="1536" mute="0" name="Volume Fade In" autoresize="1">
           <time inTan="0" value="0" pos="0" outTan="0" outValue="0" lockedTan="0"/>
           <time inTan="0" value="100" pos="1536" outTan="0" outValue="100" lockedTan="0"/>
+          <object id="4344569"/>
+        </automationclip>
+        <automationclip pos="40704" prog="1" off="0" tens="1" len="1536" mute="0" name="Volume Riser Build2" autoresize="1">
+          <time inTan="0" value="0" pos="0" outTan="0" outValue="0" lockedTan="0"/>
+          <time inTan="0" value="100" pos="1536" outTan="0" outValue="100" lockedTan="0"/>
+          <object id="4344569"/>
+        </automationclip>
+        <automationclip pos="46848" prog="1" off="0" tens="1" len="2304" mute="0" name="Volume BIG Riser" autoresize="1">
+          <time inTan="0" value="0" pos="0" outTan="0" outValue="0" lockedTan="0"/>
+          <time inTan="0" value="100" pos="2304" outTan="0" outValue="100" lockedTan="0"/>
+          <object id="4344569"/>
+        </automationclip>
+        <automationclip pos="53760" prog="1" off="0" tens="1" len="1536" mute="0" name="Volume Downlifter" autoresize="1">
+          <time inTan="0" value="100" pos="0" outTan="0" outValue="100" lockedTan="0"/>
+          <time inTan="0" value="0" pos="1536" outTan="0" outValue="0" lockedTan="0"/>
+          <object id="4344569"/>
+        </automationclip>
+        <automationclip pos="59904" prog="1" off="0" tens="1" len="1536" mute="0" name="Volume Fade Outro" autoresize="1">
+          <time inTan="0" value="60" pos="0" outTan="0" outValue="60" lockedTan="0"/>
+          <time inTan="0" value="0" pos="1536" outTan="0" outValue="0" lockedTan="0"/>
           <object id="4344569"/>
         </automationclip>
       </track>
